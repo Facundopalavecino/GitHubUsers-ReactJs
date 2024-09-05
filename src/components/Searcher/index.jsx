@@ -5,7 +5,6 @@ import SearchIcon from '@mui/icons-material/Search';
 const Searcher = (props) => {
 
   const { setInputUser } = props;
-
   const [valueInput, setValueInput] = useState('');
 
    const onSearchValueChange = (event) =>{
@@ -17,6 +16,12 @@ const Searcher = (props) => {
     setInputUser(valueInput);
   }
 
+  const handleKeyPress = (event) =>{
+    if(event.key == 'Enter'){
+      handleSubmit();
+    }
+  }
+
   return(
     <Stack 
       direction= 'row'
@@ -24,7 +29,6 @@ const Searcher = (props) => {
         marginTop: '30px',
         width: '80%'
       }}
-
     >
       <TextField
         id="outlined-basic"
@@ -34,8 +38,9 @@ const Searcher = (props) => {
         size="small"
         value={valueInput}
         onChange={onSearchValueChange}
+        onKeyPress={handleKeyPress}
         sx={{
-          width: '90%',
+          width: '80%',
         }}
       />
       <IconButton

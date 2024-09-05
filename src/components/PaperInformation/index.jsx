@@ -11,20 +11,20 @@ const PaperInformation = (props) =>{
     
     return(
         <Paper elevation={5}>
-            <Stack spacing={3} direction="row"
-            sx={{justifyContent:'space-evenly', margin:'20px'}} 
+            <Stack spacing={1}
+            sx={{margin:'12px'}} 
             >
-                <Stack>
-                    <Typography variant="h5">Respos</Typography>
-                    <Typography variant="h6">{public_repos}</Typography>
+                <Stack direction="row" spacing={1}>
+                    <Typography variant="caption">Respositories:</Typography>
+                    <Typography variant="caption">{public_repos}</Typography>
                 </Stack>
-                <Stack>
-                    <Typography variant="h5">Followers</Typography>
-                    <Typography variant="h6">{followers}</Typography>
+                <Stack direction="row" spacing={1}>
+                    <Typography variant="caption">Followers:</Typography>
+                    <Typography variant="caption">{followers}</Typography>
                 </Stack>
-                <Stack>
-                    <Typography variant="h5">Folowwing</Typography>
-                    <Typography variant="h6">{following}</Typography>
+                <Stack direction="row" spacing={1}>
+                    <Typography variant="caption">Folowwing:</Typography>
+                    <Typography variant="caption">{following}</Typography>
                 </Stack>
             </Stack>
         </Paper>

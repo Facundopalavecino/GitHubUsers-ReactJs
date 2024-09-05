@@ -9,7 +9,7 @@ const Description = (props) =>{
     const { bio } = userState;
     return(
         <Fragment>
-            <Stack sx={{justifyContent:'center'}}>
+            <Stack>
                 {
                     bio !== null
                     ? <Typography variant="body1">{bio}</Typography>

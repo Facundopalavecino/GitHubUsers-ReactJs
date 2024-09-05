@@ -12,7 +12,7 @@ const PrincipalInformation = (props) => {
     return(
         <Fragment>
             <Stack direction = "row" sx={{justifyContent:'space-between'}}>
-                <Typography variant="h4">{name}</Typography>
+                <Typography variant="h6">{name}</Typography>
                 <Typography variant="subtitle2">{created_at}</Typography>
             </Stack>
            <Typography variant="caption">{`@${login}`}</Typography>     
