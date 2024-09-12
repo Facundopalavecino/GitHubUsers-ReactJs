@@ -5,11 +5,10 @@ import { Snackbar, Alert } from '@mui/material';
 import Searcher from "./components/Searcher/index";
 import UserCard from "./containers/UserCard";
 
+
 const Container = styled.div`
   background-color: whitesmoke;
-  width: 80vw;
-  height: 500px;
-  flex-direction: row;
+  width: 100%;
   border-radius: 16px;
   marginTop: 40px;
   display: flex;
@@ -17,10 +16,7 @@ const Container = styled.div`
   align-items: center;
   height: 90vh;
   flex-direction: column; 
-
-  @media (max-width: 1000px) {
-    border: 2px solid red;
-    }
+  border:0.2rem dashed black
 `;
 
 const App = () => {
@@ -63,28 +59,20 @@ const App = () => {
     setSnackbarOpen(false);
   }
 
-  const appStyle = {
-    border:'10px solid black',
-    display:'flex',
-    justifyContent: 'center',
-    alignItems: 'center',  
-    height: '90vh', 
-  };
-
-  return(
-    <Container style={appStyle}>
-      <Searcher inputUser={inputUser} setInputUser={setInputUser} />
-      <UserCard userState = {userState}/>
-
-      <Snackbar open={snackbarOpen}
-                autoHideDuration={6000}
-                onClose={handleSnackbarClose}>
-          <Alert onClose={handleSnackbarClose} severity="error">
-          Usuario no encontrado. Por favor, ingrese un usuario válido.
-          </Alert>
-      </Snackbar>
-
-    </Container>
+  return(  
+      <Container>
+        <Searcher inputUser={inputUser} setInputUser={setInputUser} />
+        <UserCard userState = {userState}/>
+  
+        <Snackbar open={snackbarOpen}
+                  autoHideDuration={6000}
+                  onClose={handleSnackbarClose}>
+            <Alert onClose={handleSnackbarClose} severity="error">
+            Usuario no encontrado. Por favor, ingrese un usuario válido.
+            </Alert>
+        </Snackbar>
+  
+      </Container>  
   )
 };
 
